@@ -1,0 +1,464 @@
+// header自身高度
+@height: 44px;
+// 客户端顶部状态栏预留高度
+@statusBarHeight: 26px;
+// img
+@imgUrl: '~@/assets/images/';
+@imgUrlGlobal: '~@@/assets/images/';
+
+.goodsDetail {
+  height: 100%;
+  padding-bottom: 50px;
+
+  &.isWxmp {
+    .header {
+      .statusBar {
+        display: none;
+      }
+      .iconLeft {
+        display: none;
+      }
+      .iconShare {
+        display: none;
+      }
+    }
+  }
+  .content {
+    height: 100%;
+    overflow: auto;
+  }
+}
+.van-pull-refresh {
+  height: 100%;
+  overflow: auto;
+
+  /deep/ .van-pull-refresh__track {
+    min-height: 100%;
+  }
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 97;
+
+  .statusBar {
+    height: @statusBarHeight;
+  }
+  i {
+    position: absolute;
+    top: @statusBarHeight + 8px;
+    width: 28px;
+    height: 28px;
+    background-size: contain;
+  }
+  .iconLeft {
+    left: 10px;
+    background: url('@{imgUrlGlobal}iconBack.png') center no-repeat;
+    background-size: contain;
+  }
+  .iconShare {
+    right: 10px;
+    background: url('@{imgUrlGlobal}iconShare.png') center no-repeat;
+    background-size: contain;
+  }
+}
+
+.van-swipe {
+  .van-swipe-item {
+    img {
+      display: block;
+      width: 375px;
+      height: 375px;
+    }
+  }
+  .custom-indicator {
+    position: absolute;
+    right: 13px;
+    bottom: 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    padding: 2px 5px;
+    font-size: 9px;
+    transform: scale(9/12);
+    transform-origin: right bottom;
+    color: #999;
+  }
+}
+
+.titleWrap {
+  height: 54px;
+  overflow: hidden;
+  padding: 10px 10px 0;
+  font-size: 16px;
+  font-family: PingFangSC-Regular,PingFang SC;
+  color: #333;
+  line-height: 22px;
+  background-color: #fff;
+}
+
+.price {
+  padding: 18px 10px 7px;
+  background-color: #fff;
+
+  .taobaoPrice {
+    color: #FF5400;
+    font-size: 12px;
+    font-family:PingFangSC-Regular,PingFang SC;
+  }
+  .newPrice {
+    display: flex;
+    padding: 4px 0 4px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+
+    .yuan {
+      font-size: 12px;
+      transform: translateY(2px);
+    }
+    .actualPrice {
+      font-size: 16px;
+      color: #000;
+    }
+    .txtTag {
+      width: 48px;
+      height: 18px;
+      background: url('@{imgUrl}gotPrice.png') 2px center no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.couponBar {
+  background-color: #fff;
+  padding: 0 10px 18px;
+
+  .couponBox {
+    background: url('@{imgUrl}couponBg.png') center no-repeat;
+    background-size: 100% 100%;
+    padding: 13px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .couponInfo {
+    padding-bottom: 9px;
+
+    .couponTag {
+      display: inline-block;
+      background: linear-gradient(180deg,rgba(246,106,69,1) 0%,rgba(235,83,55,1) 100%);
+      border-radius: 2px;
+      font-size: 12px;
+      transform: scale(10/12);
+      transform-origin: left center;
+      color: #fff;
+      padding: 3px 19px;
+      font-family:PingFangSC-Medium,PingFang SC;
+    }
+    .couponAmount {
+      color: #643B13;
+      font-size: 12px;
+      font-family:PingFangSC-Regular,PingFang SC;
+    }
+  }
+  .redBag {
+    .redBagTag {
+      background: linear-gradient(180deg,rgba(255,212,123,1) 0%,rgba(255,200,86,1) 100%);
+      border-radius: 2px;
+      padding: 3px 7px;
+      font-size: 12px;
+      font-family: PingFangSC-Medium,PingFang SC;
+      color: rgba(98,60,21,1);
+      transform: scale(10/12);
+      transform-origin: left center;
+      display: inline-block;
+    }
+    .redBagTxt {
+      font-size: 12px;
+      font-family:PingFangSC-Regular,PingFang SC;
+      color:rgba(100,59,19,1);
+    }
+    .redBagAmount {
+      color: #EB5337;
+      font-size: 12px;
+      font-family:PingFangSC-Regular,PingFang SC;
+    }
+  }
+  .couponBoxRight {
+    font-size: 12px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    padding-right: 10px;
+    background: url('@{imgUrl}iconArrowR.png') right center no-repeat;
+    background-size: 8% 70%;
+
+    .rightTxt {
+      color:rgba(100,59,19,1);
+    }
+    .rightAmount {
+      color: #EB5337;
+    }
+  }
+}
+
+.divide {
+  font-size:12px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  color:rgba(153,153,153,1);
+  padding: 7px 0;
+  text-align: center;
+
+  .line {
+    display: inline-block;
+    background-color: #999;
+    width: 40px;
+    height: 1px;
+    vertical-align: middle;
+  }
+  span {
+    margin: 0 10px;
+  }
+}
+
+.imgDetail {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.buyBox {
+  padding: 6px 18px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  button {
+    height: 38px;
+    line-height: 38px;
+    font-size:14px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    color:rgba(51,51,51,1);
+    width: 100%;
+    background-color: #FDC553;
+    border-radius: 20px;
+  }
+}
+
+.modalCoupon {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 48px;
+  border-radius: 14px 14px 0 0;
+  z-index: 99;
+  padding: 16px 20px 2px;
+  background-color: #fff;
+
+  .closeBtn {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 16px;
+    right: 20px;
+    background: url('@{imgUrlGlobal}iconClose.png') center no-repeat;
+    background-size: contain;
+  }
+  .amountTxt {
+    color: #EB5337;
+  }
+  .title {
+    font-size:16px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    padding-bottom: 17px;
+    border-bottom: 1px solid #F2F2F2;
+  }
+  .detail {
+    padding: 18px 0;
+    font-size:14px;
+    font-family: PingFangSC-Medium,PingFang SC;
+    font-weight: 500;
+    color:rgba(51,51,51,1);
+
+    .detailCoupon {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+    }
+    .detailRedBag {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .modalDivide {
+    font-size: 12px;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: #999;
+    text-align: center;
+
+    .line {
+      display: inline-block;
+      background-color: #F2F2F2;
+      width: 120px;
+      height: 1px;
+      vertical-align: middle;
+    }
+    span {
+      margin: 0 11px;
+    }
+  }
+  .flow {
+    padding: 36px 0;
+    display: flex;
+    // justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+
+    .arrow {
+      width: 45px;
+      height: 9px;
+      background: url('@{imgUrl}buyFlow.png') center no-repeat;
+      background-size: 100% 100%;
+      margin: 0 6px;
+    }
+    .circle {
+      width: 63px;
+      height: 63px;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: #FDC553;
+      font-size: 12px;
+      font-family:PingFangSC-Regular,PingFang SC;
+      text-align: center;
+
+      p:first-of-type {
+        padding-bottom: 3px;
+      }
+      span {
+        display: inline-block;
+        transform: scale(10/12);
+        transform-origin: center bottom;
+      }
+    }
+  }
+}
+
+.modalJump {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  z-index: 102;
+  background: url('@{imgUrl}jumpBg.png') center no-repeat;
+  background-size: 100% 100%;
+
+  .iconBox {
+    padding: 29px 27px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .dyd {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      background: url('@{imgUrlGlobal}logo.png') center no-repeat;
+      background-size: contain;
+    }
+    .taobao {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      background: url('@{imgUrlGlobal}iconTaobao.png') center no-repeat;
+      background-size: contain;
+    }
+  }
+  .progressBox {
+    padding: 18px 10px 0;
+
+    .progress {
+      width:81px;
+      height:9px;
+      background:rgba(255,230,178,1);
+      border-radius:5px;
+      overflow: hidden;
+
+      .done {
+        display: block;
+        width: 0;
+        height: 100%;
+        border-radius: 5px;
+        background-color: #FFA30E;
+      }
+      &.jumping .done{
+        transition: 3000ms width linear;
+        width: 100%;
+      }
+    }
+    .tip {
+      padding-top: 6px;
+      text-align: center;
+      font-size: 12px;
+      transform: scale(10/12);
+      transform-origin: center center;
+      color: #999;
+      font-family:PingFangSC-Medium,PingFang SC;
+      font-weight:500;
+    }
+  }
+  .mid {
+    padding: 0 0 6px;
+    text-align: center;
+    font-size:14px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(255,84,0,1);
+  }
+  .bot {
+    padding-bottom: 16px;
+    font-size:18px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color: #333333;
+    text-align: center;
+
+    span {
+      color: #E4534F;
+    }
+  }
+}
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: .5;
+  z-index: 98;
+
+  &.isMaskJump {
+    z-index: 101;
+  }
+}
+
+.slideToUp-enter,
+.slideToUp-leave-to {
+  transform: translateY(300px);
+}
+.slideToUp-enter-active,
+.slideToUp-leave-active {
+  transition: transform .25s ease-out;
+}
